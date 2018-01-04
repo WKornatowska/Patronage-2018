@@ -18,7 +18,7 @@ Feature: Authentication to the application
 		When I enter invalid login <email> and  password <password>
 		Then I should see error message "Authentication failed. Login or password are incorrect."
 	Examples:
-		|	   email	       |    password      |
+		|	   email       |    password      |
 		| validEmail@test.com  |  invalidPassword | 
 		| invalidEmail@test.com|  validPassword   |
 		| invalidEmail@test.com|  invalidPassword |
@@ -32,21 +32,21 @@ Feature: Authentication to the application
 		When I fill in "login" with <email> 
 		Then I should see <validation_message>
 		Examples:
-		| email  													   |  validation_message	   |
+		| email  						       |  validation_message	   |
 		|testtesttesttesttesttesttesttesttesttesttesttesttest@test.com |relevant validation message| #email address consist 61 characters
-		|testtesttesttesttesttesttesttesttesttesttesttesttes@test.com  |						   | #email address consist 60 characters
-		|testtesttesttesttesttesttesttesttesttesttesttestte@test.com   |						   | #email address consist 59 characters
+		|testtesttesttesttesttesttesttesttesttesttesttesttes@test.com  |			   | #email address consist 60 characters
+		|testtesttesttesttesttesttesttesttesttesttesttestte@test.com   |		           | #email address consist 59 characters
 	
 	Scenario Outline: Regular user enter invalid format of email address in login field
 		When I fill in "login" with invalid format of email address <email>
 		Then I should see relevant validation message <validation_message>
 	Examples:
-	| email  													   |  validation_message	   |
-	| 	@	 													   |relevant validation message|
-	|   @t   													   |relevant validation message|
-	|   t@   													   |relevant validation message|
-	|   t@t 													   |relevant validation message|
-	|   t@t. 													   |relevant validation message|
-	|   test@test.com											   |						   |
+	| email  		|  validation_message       |
+	|   @	 		|relevant validation message|
+	|   @t   	        |relevant validation message|
+	|   t@   	        |relevant validation message|
+	|   t@t 		|relevant validation message|
+	|   t@t. 	        |relevant validation message|
+	|   test@test.com       |			    |
 		
 	
